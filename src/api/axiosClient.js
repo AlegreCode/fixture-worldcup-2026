@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getToken, registerAndLogin } from './authService';
 
 const axiosClient = axios.create({
-  baseURL: '/api',
+  baseURL: import.meta.env.PROD ? 'https://worldcup26.ir' : '/api',
 });
 
 // Request interceptor: agrega JWT token a cada petición
